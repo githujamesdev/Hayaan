@@ -89,25 +89,25 @@ public class FlightAvailability {
                             JsonArray fareItineraries = airSearchResult.getAsJsonArray("FareItineraries");
                             for (int i = 0; i < fareItineraries.size(); i++) {
                                 JsonObject fareItinerary = fareItineraries.get(i).getAsJsonObject().getAsJsonObject("FareItinerary");
-                                if (fareItinerary.has("AirItineraryFareInfo")) {
-                                    JsonObject airItineraryFareInfo = fareItinerary.getAsJsonObject("AirItineraryFareInfo");
-                                    airItineraryFareInfo.remove("FareBreakdown");
-                                    if (airItineraryFareInfo.has("ItinTotalFares")) {
-                                        JsonObject itinTotalFares = airItineraryFareInfo.getAsJsonObject("ItinTotalFares");
-                                        if (itinTotalFares.has("BaseFare")) {
-                                            itinTotalFares.remove("BaseFare");
-                                        }
-                                        if (itinTotalFares.has("EquivFare")) {
-                                            itinTotalFares.remove("EquivFare");
-                                        }
-                                        if (itinTotalFares.has("ServiceTax")) {
-                                            itinTotalFares.remove("ServiceTax");
-                                        }
-                                        if (itinTotalFares.has("TotalTax")) {
-                                            itinTotalFares.remove("TotalTax");
-                                        }
-                                    }
-                                }
+                                // if (fareItinerary.has("AirItineraryFareInfo")) {
+                                //     JsonObject airItineraryFareInfo = fareItinerary.getAsJsonObject("AirItineraryFareInfo");
+                                //     airItineraryFareInfo.remove("FareBreakdown");
+//                                    if (airItineraryFareInfo.has("ItinTotalFares")) {
+//                                        JsonObject itinTotalFares = airItineraryFareInfo.getAsJsonObject("ItinTotalFares");
+//                                        if (itinTotalFares.has("BaseFare")) {
+//                                            itinTotalFares.remove("BaseFare");
+//                                        }
+//                                        if (itinTotalFares.has("EquivFare")) {
+//                                            itinTotalFares.remove("EquivFare");
+//                                        }
+//                                        if (itinTotalFares.has("ServiceTax")) {
+//                                            itinTotalFares.remove("ServiceTax");
+//                                        }
+//                                        if (itinTotalFares.has("TotalTax")) {
+//                                            itinTotalFares.remove("TotalTax");
+//                                        }
+//                                    }
+                                // }
                                 String airlineCode = fareItinerary.get("ValidatingAirlineCode").getAsString();
 
                                 for (JsonElement airlineElement : airlines) {
